@@ -7,7 +7,7 @@
 
 import Foundation
 
- final class RequestAPICharacters {
+ final class CharactersService {
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
         config.httpMaximumConnectionsPerHost = 40
@@ -16,7 +16,7 @@ import Foundation
     
     private static let session = URLSession(configuration: configuration)
 
-    class func loadMovies<T: Decodable>(
+    class func loadCharacters<T: Decodable>(
         page: String,
         complitionHandler: @escaping (Result<T, APIServiceError>) -> ()
     ) {
@@ -66,3 +66,4 @@ import Foundation
         }
         dataTask.resume()
     }
+ }
