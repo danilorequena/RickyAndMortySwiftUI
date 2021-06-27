@@ -9,17 +9,23 @@ import Foundation
 import CoreLocation
 
 struct CharactersModel: Codable {
-    let results: [Results]
+    
+    let results: [CharactersResults]
 }
 
-struct Results: Codable {
-    let name: String
-    let status: String
-    let species: String
-    let gender: String
-    let origin: Origin
-    let location: Location
-    let image: String
+struct CharactersResults: Codable, Equatable {
+    static func == (lhs: CharactersResults, rhs: CharactersResults) -> Bool {
+        return true
+    }
+    
+    let id: Int?
+    let name: String?
+    let status: String?
+    let species: String?
+    let gender: String?
+    let origin: Origin?
+    let location: Location?
+    let image: String?
 }
 
 struct Origin: Codable {

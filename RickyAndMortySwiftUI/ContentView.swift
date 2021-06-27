@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var charactersViewModel = CharactersViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            List(self.charactersViewModel.characters?.results ?? [], id: \.id) { characters in
+                Text(characters.name ?? "não deu")
+            }
+        }
+        .navigationTitle("Characters")
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
