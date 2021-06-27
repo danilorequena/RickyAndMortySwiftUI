@@ -20,21 +20,12 @@ import Foundation
         page: String,
         complitionHandler: @escaping (Result<T, APIServiceError>) -> ()
     ) {
-        guard let queryURL = URL(string: "https://rickandmortyapi.com/api/character") else {
+        guard let queryURL = URL(string: "\(Constants.baseURL)character") else {
             complitionHandler(.failure(.url))
             return
         }
         let components = URLComponents(url: queryURL,
                                        resolvingAgainstBaseURL: true)!
-//        components.queryItems = [
-//            URLQueryItem(name: "api_key", value: Constants.apiKey),
-//            URLQueryItem(name: "language", value: Locale.preferredLanguages[0]),
-//            URLQueryItem(name: "region", value: Locale.current.regionCode),
-//            URLQueryItem(name: "include_adult", value: "false"),
-//            URLQueryItem(name: "include_video", value: "true"),
-//            URLQueryItem(name: "watch_region", value: Locale.current.regionCode),
-//            URLQueryItem(name: "page", value: page)
-//        ]
         var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
 

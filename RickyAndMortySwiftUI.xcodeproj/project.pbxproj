@@ -15,6 +15,7 @@
 		7D11507F2684C2810012C3BF /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11507E2684C2810012C3BF /* CharactersService.swift */; };
 		7D1150812684C3D30012C3BF /* ApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1150802684C3D30012C3BF /* ApiServiceError.swift */; };
 		7D64EAA1268909FD00FCBD00 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */; };
+		7D64EAAB26891B2E00FCBD00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64EAAA26891B2E00FCBD00 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7D11507E2684C2810012C3BF /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
 		7D1150802684C3D30012C3BF /* ApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceError.swift; sourceTree = "<group>"; };
 		7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		7D64EAAA26891B2E00FCBD00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,10 @@
 		7D11506D2684C0140012C3BF /* RickyAndMortySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				7D11506E2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift */,
-				7D1150702684C0140012C3BF /* ContentView.swift */,
-				7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */,
-				7D11507C2684C10A0012C3BF /* CharactersModel.swift */,
-				7D11507E2684C2810012C3BF /* CharactersService.swift */,
+				7D64EAA926891B1500FCBD00 /* Utils */,
+				7D64EAA426891A9700FCBD00 /* Views */,
 				7D1150802684C3D30012C3BF /* ApiServiceError.swift */,
+				7D11506E2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift */,
 				7D1150722684C0150012C3BF /* Assets.xcassets */,
 				7D1150742684C0150012C3BF /* Preview Content */,
 			);
@@ -77,6 +77,57 @@
 				7D1150752684C0150012C3BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7D64EAA426891A9700FCBD00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D64EAA526891AAE00FCBD00 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D64EAA526891AAE00FCBD00 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7D1150702684C0140012C3BF /* ContentView.swift */,
+				7D64EAA726891ADC00FCBD00 /* ViewModel */,
+				7D64EAA626891AD000FCBD00 /* Model */,
+				7D64EAA826891AEB00FCBD00 /* Service */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7D64EAA626891AD000FCBD00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D11507C2684C10A0012C3BF /* CharactersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D64EAA726891ADC00FCBD00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7D64EAA826891AEB00FCBD00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7D11507E2684C2810012C3BF /* CharactersService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7D64EAA926891B1500FCBD00 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7D64EAAA26891B2E00FCBD00 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +204,7 @@
 				7D1150812684C3D30012C3BF /* ApiServiceError.swift in Sources */,
 				7D11507D2684C10A0012C3BF /* CharactersModel.swift in Sources */,
 				7D1150712684C0140012C3BF /* ContentView.swift in Sources */,
+				7D64EAAB26891B2E00FCBD00 /* Constants.swift in Sources */,
 				7D11506F2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift in Sources */,
 				7D11507F2684C2810012C3BF /* CharactersService.swift in Sources */,
 			);
