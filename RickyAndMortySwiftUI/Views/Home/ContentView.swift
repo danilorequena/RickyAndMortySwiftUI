@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List(self.charactersViewModel.characters?.results ?? [], id: \.id) { characters in
-                Text(characters.name ?? "não deu")
+                HomeCell(title: characters.name ?? "", subTitle: characters.species ?? "")
             }
         }
         .navigationTitle("Characters")
