@@ -14,7 +14,10 @@
 		7D11507D2684C10A0012C3BF /* CharactersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11507C2684C10A0012C3BF /* CharactersModel.swift */; };
 		7D11507F2684C2810012C3BF /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11507E2684C2810012C3BF /* CharactersService.swift */; };
 		7D1150812684C3D30012C3BF /* ApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1150802684C3D30012C3BF /* ApiServiceError.swift */; };
+		7D6337FC268932C5002D015D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D6337FB268932C5002D015D /* Kingfisher */; };
 		7D64EAA1268909FD00FCBD00 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */; };
+		7D64EAAB26891B2E00FCBD00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64EAAA26891B2E00FCBD00 /* Constants.swift */; };
+		7D64EAAE26891CE400FCBD00 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64EAAD26891CE400FCBD00 /* HomeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,8 @@
 		7D11507E2684C2810012C3BF /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
 		7D1150802684C3D30012C3BF /* ApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceError.swift; sourceTree = "<group>"; };
 		7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		7D64EAAA26891B2E00FCBD00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7D64EAAD26891CE400FCBD00 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6337FC268932C5002D015D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,12 +65,10 @@
 		7D11506D2684C0140012C3BF /* RickyAndMortySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				7D11506E2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift */,
-				7D1150702684C0140012C3BF /* ContentView.swift */,
-				7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */,
-				7D11507C2684C10A0012C3BF /* CharactersModel.swift */,
-				7D11507E2684C2810012C3BF /* CharactersService.swift */,
+				7D64EAA926891B1500FCBD00 /* Utils */,
+				7D64EAA426891A9700FCBD00 /* Views */,
 				7D1150802684C3D30012C3BF /* ApiServiceError.swift */,
+				7D11506E2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift */,
 				7D1150722684C0150012C3BF /* Assets.xcassets */,
 				7D1150742684C0150012C3BF /* Preview Content */,
 			);
@@ -77,6 +81,66 @@
 				7D1150752684C0150012C3BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7D64EAA426891A9700FCBD00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D64EAA526891AAE00FCBD00 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D64EAA526891AAE00FCBD00 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7D1150702684C0140012C3BF /* ContentView.swift */,
+				7D64EAAC26891CB200FCBD00 /* Cells */,
+				7D64EAA726891ADC00FCBD00 /* ViewModel */,
+				7D64EAA626891AD000FCBD00 /* Model */,
+				7D64EAA826891AEB00FCBD00 /* Service */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7D64EAA626891AD000FCBD00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D11507C2684C10A0012C3BF /* CharactersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D64EAA726891ADC00FCBD00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7D64EAA826891AEB00FCBD00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7D11507E2684C2810012C3BF /* CharactersService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7D64EAA926891B1500FCBD00 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7D64EAAA26891B2E00FCBD00 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7D64EAAC26891CB200FCBD00 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7D64EAAD26891CE400FCBD00 /* HomeCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +159,9 @@
 			dependencies = (
 			);
 			name = RickyAndMortySwiftUI;
+			packageProductDependencies = (
+				7D6337FB268932C5002D015D /* Kingfisher */,
+			);
 			productName = RickyAndMortySwiftUI;
 			productReference = 7D11506B2684C0140012C3BF /* RickyAndMortySwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +190,10 @@
 				Base,
 			);
 			mainGroup = 7D1150622684C0140012C3BF;
+			packageReferences = (
+				7D64EAB12689320E00FCBD00 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				7D6337FA268932C5002D015D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 7D11506C2684C0140012C3BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -151,8 +222,10 @@
 			files = (
 				7D64EAA1268909FD00FCBD00 /* CharactersViewModel.swift in Sources */,
 				7D1150812684C3D30012C3BF /* ApiServiceError.swift in Sources */,
+				7D64EAAE26891CE400FCBD00 /* HomeCell.swift in Sources */,
 				7D11507D2684C10A0012C3BF /* CharactersModel.swift in Sources */,
 				7D1150712684C0140012C3BF /* ContentView.swift in Sources */,
+				7D64EAAB26891B2E00FCBD00 /* Constants.swift in Sources */,
 				7D11506F2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift in Sources */,
 				7D11507F2684C2810012C3BF /* CharactersService.swift in Sources */,
 			);
@@ -359,6 +432,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D6337FA268932C5002D015D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		7D64EAB12689320E00FCBD00 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D6337FB268932C5002D015D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D6337FA268932C5002D015D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D1150632684C0140012C3BF /* Project object */;
 }
