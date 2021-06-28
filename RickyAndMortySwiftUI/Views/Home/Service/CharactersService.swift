@@ -7,7 +7,7 @@
 
 import Foundation
 
- final class CharactersService {
+final class CharactersService {
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
         config.httpMaximumConnectionsPerHost = 40
@@ -15,20 +15,28 @@ import Foundation
     }()
     
     private static let session = URLSession(configuration: configuration)
-
+    
     class func loadCharacters<T: Decodable>(
         page: String,
         complitionHandler: @escaping (Result<T, APIServiceError>) -> ()
     ) {
-        guard let queryURL = URL(string: "\(Constants.baseURL)character") else {
+        guard let queryURL = URL(string: "\(Constants.baseURL)character/") else {
             complitionHandler(.failure(.url))
             return
         }
-        let components = URLComponents(url: queryURL,
-                                       resolvingAgainstBaseURL: true)!
+        
+        guard var components = URLComponents(
+            url: queryURL,
+            resolvingAgainstBaseURL: true
+        ) else {
+            return
+        }
+        
+        components.queryItems = [URLQueryItem(name: "page", value: page)]
+        
         var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
-
+        
         let dataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if error == nil {
                 guard let response = response as? HTTPURLResponse else {
@@ -57,4 +65,4 @@ import Foundation
         }
         dataTask.resume()
     }
- }
+}
