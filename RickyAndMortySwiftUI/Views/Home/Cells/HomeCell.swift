@@ -20,19 +20,21 @@ struct HomeCell: View {
                     //TODO: - Trocar para AsyncImage assim que possivel
                     KFImage(URL(string: image))
                         .resizable()
-                        .frame(width: 100, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 100, height: 110, alignment: .center)
                         .clipShape(Rectangle())
-                        .overlay(Rectangle().stroke(Color.white, lineWidth: 4))
-                    .shadow(radius: 7)
+                        .overlay(Rectangle().stroke(Color.white))
+                        .cornerRadius(16)
+                        .shadow(radius: 7)
                     
                     VStack(alignment: .leading, spacing: 10) {
                         Text(title)
+                            .font(.title)
                         Text(subTitle)
+                            .font(.subheadline)
                     }.padding(.init(top: 0, leading: 10, bottom: 0, trailing: 0))
                     Spacer()
                 }
                 .padding()
-                .border(.gray)
             }
         }
     }
