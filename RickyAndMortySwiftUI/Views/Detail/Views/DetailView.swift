@@ -28,6 +28,7 @@ struct DetailView: View {
                 .font(.subheadline)
         }
         .padding(.init(top: 120, leading: 80, bottom: 120, trailing: 80))
+        .navigationTitle(title)
     }
 }
 

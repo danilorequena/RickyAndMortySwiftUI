@@ -23,9 +23,8 @@ struct ContentView: View {
                     )
                 }
             }
+            .navigationTitle("Characters")
         }
-        .navigationTitle("Characters")
-        .navigationBarTitleDisplayMode(.large)
     }
 }
 
