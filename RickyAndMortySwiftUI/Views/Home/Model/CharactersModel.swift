@@ -13,11 +13,7 @@ struct CharactersModel: Codable {
     let results: [CharactersResults]
 }
 
-struct CharactersResults: Codable, Equatable {
-    static func == (lhs: CharactersResults, rhs: CharactersResults) -> Bool {
-        return true
-    }
-    
+struct CharactersResults: Codable, Identifiable {
     let id: Int?
     let name: String?
     let status: String?
