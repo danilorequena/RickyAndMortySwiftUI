@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ContentView: View {
     @ObservedObject private var charactersViewModel = CharactersViewModel()
     var body: some View {
         NavigationView{
-            List(self.charactersViewModel.characters?.results ?? [], id: \.id) { characters in
-                
+            List {
+                ForEach(charactersViewModel.characters?.results ?? []) { characters in
+                    
                 NavigationLink(
                     destination: DetailView(image: characters.image ?? "", title: characters.name ?? "", subTitle: characters.species ?? "")
                 ) {
@@ -21,6 +23,14 @@ struct ContentView: View {
                         subTitle: characters.species ?? "",
                         image: characters.image ?? ""
                     )
+                }
+            }
+                
+                if charactersViewModel.membersListFull == false {
+                    ProgressView()
+                        .onAppear {
+                            charactersViewModel.fetchCharacters()
+                        }
                 }
             }
             .navigationTitle("Characters")

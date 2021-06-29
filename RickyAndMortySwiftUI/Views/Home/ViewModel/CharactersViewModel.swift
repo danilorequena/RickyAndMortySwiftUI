@@ -11,7 +11,7 @@ import UIKit
 
 
 protocol CharactersProtocol: AnyObject {
-    func fetchDiscoverMovies()
+    func fetchCharacters()
 }
 
 protocol CharactersViewModelDelegate: AnyObject {
@@ -19,17 +19,28 @@ protocol CharactersViewModelDelegate: AnyObject {
     func errorList()
 }
 
-class CharactersViewModel: ObservableObject {
+class CharactersViewModel: ObservableObject, CharactersProtocol {
     weak var delegate: CharactersViewModelDelegate?
+    var membersListFull = false
     @Published var characters: CharactersModel?
+    @Published var page = 0
+    @Published var perPage = 20
     
     init() {
-        CharactersService.loadCharacters(page: "1") { (
+        fetchCharacters()
+    }
+    
+    func fetchCharacters() {
+        CharactersService.loadCharacters(page: "\(page+1)") { (
             result: Result<CharactersModel, APIServiceError>) in
             switch result {
             case .success(let characters):
+                self.page += 1
                 self.characters = characters
                 self.delegate?.charactersList()
+                if characters.results.count < self.perPage {
+                    self.membersListFull = true
+                }
                 
             case .failure:
                 self.delegate?.errorList()
