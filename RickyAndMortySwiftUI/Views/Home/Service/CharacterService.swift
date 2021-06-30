@@ -11,13 +11,13 @@ import Combine
 protocol CharacterService {
     var apiSession: APIService {get}
     
-    func getCharacterList() -> AnyPublisher<CharactersModel, APIError>
+    func getCharacterList(page: Int) -> AnyPublisher<CharactersModel, APIError>
 }
 
 extension CharacterService {
     
-    func getCharacterList() -> AnyPublisher<CharactersModel, APIError> {
-        return apiSession.request(with: CharactersEndpoint.charactersList)
+    func getCharacterList(page: Int) -> AnyPublisher<CharactersModel, APIError> {
+        return apiSession.request(with: CharactersEndpoint.charactersList(page: page))
             .eraseToAnyPublisher()
     }
 }

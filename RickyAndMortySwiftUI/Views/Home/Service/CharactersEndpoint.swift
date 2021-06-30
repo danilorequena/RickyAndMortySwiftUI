@@ -8,15 +8,15 @@
 import Foundation
 
 enum CharactersEndpoint {
-    case charactersList
+    case charactersList(page: Int)
 }
 
 extension CharactersEndpoint: RequestBuilder {
     
     var urlRequest: URLRequest {
         switch self {
-        case .charactersList:
-            guard let url = URL(string: "https://rickandmortyapi.com/api/character/")
+        case .charactersList(let page):
+            guard let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(page)")
                 else {preconditionFailure("Invalid URL format")}
             let request = URLRequest(url: url)
             return request

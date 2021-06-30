@@ -29,12 +29,12 @@ struct ListHomeView: View {
                 }
             }
                 
-//                if charactersViewModel.membersListFull == false {
-//                    ProgressView()
-//                        .onAppear {
-//                            charactersViewModel.fetchCharacters()
-//                        }
-//                }
+                if charactersViewModel.listFull == false {
+                    ProgressView()
+                        .onAppear {
+                            charactersViewModel.getCharactersList()
+                        }
+                }
             }
             .navigationTitle("Characters")
         }
