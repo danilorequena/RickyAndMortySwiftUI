@@ -7,34 +7,88 @@
 
 
 import Foundation
-import UIKit
+import SwiftUI
+import Combine
 
-
-protocol CharactersProtocol: AnyObject {
-    func fetchDiscoverMovies()
-}
-
-protocol CharactersViewModelDelegate: AnyObject {
-    func charactersList()
-    func errorList()
-}
-
-class CharactersViewModel: ObservableObject {
-    weak var delegate: CharactersViewModelDelegate?
-    @Published var characters: CharactersModel?
+class CharactersViewModel: ObservableObject, CharacterService {
     
-    init() {
-        CharactersService.loadCharacters(page: "1") { (
-            result: Result<CharactersModel, APIServiceError>) in
-            switch result {
-            case .success(let characters):
-                self.characters = characters
-                self.delegate?.charactersList()
-                
-            case .failure:
-                self.delegate?.errorList()
-            }
-        }
+    var apiSession: APIService
+    @Published var characters = [CharactersResults]()
+    var cancellables = Set<AnyCancellable>()
+    var perPage = 20
+    var currentPage = 0
+    var listFull = false
+    
+    init(apiSession: APIService = APISession()) {
+        self.apiSession = apiSession
     }
+    
+    func getCharactersList() {
+        let cancellable = self.getCharacterList(page: currentPage + 1)
+            .sink { result in
+                switch result {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Handle error: \(error)")
+                }
+            } receiveValue: { characters in
+                self.currentPage += 1
+                self.characters += characters.results
+                if self.characters.count < self.perPage {
+                    self.listFull = true
+                }
+            }
+        cancellables.insert(cancellable)
+    }
+    
+//    func getCharactersList() {
+//        let cancellable = self.getCharactersList()
+//            .sink(receiveCompletion: { result in
+//                switch result {
+//                case .failure(let error):
+//                    print("Handle error: \(error)")
+//                case .finished:
+//                    break
+//                }
+//
+//            }) { (characters) in
+//                self.characters = characters
+//            }
+//        cancellables.insert(cancellable)
+//    }
+    
+    //    func fetchCharacters() {
+    //        cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
+    //            .tryMap{ $0.data }
+    //            .decode(type: [CharactersResults].self, decoder: JSONDecoder())
+    //            .receive(on: RunLoop.main)
+    //            .catch{ _ in Just(self.characters)}
+    //            .sink { characters in
+    //                self.page += 1
+    //                self.characters.append(contentsOf: characters)
+    //                if self.characters.count < self.perPage {
+    //                    self.membersListFull = true
+    //                }
+    //            }
+    //    }
+    
+    //    func fetchCharacters() {
+    //        CharactersService.loadCharacters(page: "\(page+1)") { (
+    //            result: Result<CharactersModel, APIServiceError>) in
+    //            switch result {
+    //            case .success(let characters):
+    //                self.page += 1
+    //                self.characters?.results += characters.results
+    //                self.delegate?.charactersList()
+    //                if characters.results.count < self.perPage {
+    //                    self.membersListFull = true
+    //                }
+    //
+    //            case .failure:
+    //                self.delegate?.errorList()
+    //            }
+    //        }
+    //    }
 }
 
