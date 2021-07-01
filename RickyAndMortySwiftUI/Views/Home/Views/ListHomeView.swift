@@ -9,34 +9,38 @@ import SwiftUI
 
 struct ListHomeView: View {
     @ObservedObject private var charactersViewModel = CharactersViewModel()
+    @State private var searchText : String = ""
     var body: some View {
         NavigationView {
-            List {
-                ForEach(charactersViewModel.characters) { characters in
+            VStack {
+                SearchBar(text: $searchText)
+                List {
+                    ForEach(charactersViewModel.characters.filter {self.searchText.isEmpty ? true : $0.name.contains(self.searchText)}) { characters in
+                        
+                    NavigationLink(
+                        destination: DetailView(
+                            image: characters.image,
+                            title: characters.name,
+                            subTitle: characters.species
+                        )
+                    ) {
+                        HomeCell(
+                            title: characters.name,
+                            subTitle: characters.species,
+                            image: characters.image
+                        )
+                    }
+                }
                     
-                NavigationLink(
-                    destination: DetailView(
-                        image: characters.image,
-                        title: characters.name,
-                        subTitle: characters.species
-                    )
-                ) {
-                    HomeCell(
-                        title: characters.name,
-                        subTitle: characters.species,
-                        image: characters.image
-                    )
+                    if charactersViewModel.listFull == false {
+                        ProgressView()
+                            .onAppear {
+                                charactersViewModel.getCharactersList()
+                            }
+                    }
                 }
+                .navigationTitle("Characters")
             }
-                
-                if charactersViewModel.listFull == false {
-                    ProgressView()
-                        .onAppear {
-                            charactersViewModel.getCharactersList()
-                        }
-                }
-            }
-            .navigationTitle("Characters")
         }
         .onAppear {
             self.charactersViewModel.getCharactersList()

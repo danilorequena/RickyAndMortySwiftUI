@@ -41,54 +41,5 @@ class CharactersViewModel: ObservableObject, CharacterService {
             }
         cancellables.insert(cancellable)
     }
-    
-//    func getCharactersList() {
-//        let cancellable = self.getCharactersList()
-//            .sink(receiveCompletion: { result in
-//                switch result {
-//                case .failure(let error):
-//                    print("Handle error: \(error)")
-//                case .finished:
-//                    break
-//                }
-//
-//            }) { (characters) in
-//                self.characters = characters
-//            }
-//        cancellables.insert(cancellable)
-//    }
-    
-    //    func fetchCharacters() {
-    //        cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
-    //            .tryMap{ $0.data }
-    //            .decode(type: [CharactersResults].self, decoder: JSONDecoder())
-    //            .receive(on: RunLoop.main)
-    //            .catch{ _ in Just(self.characters)}
-    //            .sink { characters in
-    //                self.page += 1
-    //                self.characters.append(contentsOf: characters)
-    //                if self.characters.count < self.perPage {
-    //                    self.membersListFull = true
-    //                }
-    //            }
-    //    }
-    
-    //    func fetchCharacters() {
-    //        CharactersService.loadCharacters(page: "\(page+1)") { (
-    //            result: Result<CharactersModel, APIServiceError>) in
-    //            switch result {
-    //            case .success(let characters):
-    //                self.page += 1
-    //                self.characters?.results += characters.results
-    //                self.delegate?.charactersList()
-    //                if characters.results.count < self.perPage {
-    //                    self.membersListFull = true
-    //                }
-    //
-    //            case .failure:
-    //                self.delegate?.errorList()
-    //            }
-    //        }
-    //    }
 }
 
