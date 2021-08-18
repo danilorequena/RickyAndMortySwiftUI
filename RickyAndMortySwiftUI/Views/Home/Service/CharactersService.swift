@@ -65,4 +65,28 @@ final class CharactersService {
         }
         dataTask.resume()
     }
+    
+    class func newLoadCharacters(from url: URL) async throws -> Result<CharactersModel, Error> {
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(CharactersModel.self, from: data)
+            return .success(result)
+        } catch {
+            return .failure(error)
+        }
+    }
+    
+//    class func loadCharacters2() async throws -> [CharactersResults] {
+//        guard let urlPath = URL(string: "\(Constants.baseURL)character/") else {
+//            throw APIError.invalidURL
+//        }
+//        
+//        let result = await newLoadCharacters(from: urlPath)
+//        switch result {
+//        case .success(let characters):
+//            self.
+//        }
+//    }
 }
+

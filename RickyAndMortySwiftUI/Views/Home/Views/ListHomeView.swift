@@ -32,10 +32,12 @@ struct ListHomeView: View {
                     }
                 }
                     
-                    if charactersViewModel.listFull == false {
+                    if charactersViewModel.listFull == true {
                         ProgressView()
                             .onAppear {
-                                charactersViewModel.getCharactersList()
+                                Task{
+                                    await charactersViewModel.getCharactersList()
+                                }
                             }
                     }
                 }
@@ -43,7 +45,9 @@ struct ListHomeView: View {
             }
         }
         .onAppear {
-            self.charactersViewModel.getCharactersList()
+            Task{
+                await charactersViewModel.getCharactersList()
+            }
         }
     }
 }
