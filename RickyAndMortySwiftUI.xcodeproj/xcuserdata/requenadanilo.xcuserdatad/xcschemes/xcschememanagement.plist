@@ -7,7 +7,25 @@
 		<key>RickyAndMortySwiftUI.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>RickyAndMortyWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7D11506A2684C0140012C3BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7D41E142271492A50031A029</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -9,7 +9,6 @@ import Foundation
 import CoreLocation
 
 struct CharactersModel: Codable {
-    
     var results: [CharactersResults]
 }
 

@@ -8,87 +8,61 @@
 
 import Foundation
 import SwiftUI
-import Combine
 
-class CharactersViewModel: ObservableObject, CharacterService {
+final class CharactersViewModel: ObservableObject {
     
-    var apiSession: APIService
+//    var apiSession: APIService
+    var service = CharactersService()
     @Published var characters = [CharactersResults]()
-    var cancellables = Set<AnyCancellable>()
     var perPage = 20
     var currentPage = 0
     var listFull = false
     
-    init(apiSession: APIService = APISession()) {
-        self.apiSession = apiSession
-    }
+//    init(apiSession: APIService = APISession()) {
+//        self.apiSession = apiSession
+//    }
+//    init(service: CharactersService = CharactersService()) {
+//        self.service = service
+//    }
     
-    func getCharactersList() {
-        let cancellable = self.getCharacterList(page: currentPage + 1)
-            .sink { result in
-                switch result {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print("Handle error: \(error)")
-                }
-            } receiveValue: { characters in
-                self.currentPage += 1
-                self.characters += characters.results
-                if self.characters.count < self.perPage {
-                    self.listFull = true
-                }
-            }
-        cancellables.insert(cancellable)
-    }
-    
+    //MARK: - implementação com Combine
 //    func getCharactersList() {
-//        let cancellable = self.getCharactersList()
-//            .sink(receiveCompletion: { result in
+//        let cancellable = self.getCharacterList(page: currentPage + 1)
+//            .sink { result in
 //                switch result {
-//                case .failure(let error):
-//                    print("Handle error: \(error)")
 //                case .finished:
 //                    break
+//                case .failure(let error):
+//                    print("Handle error: \(error)")
 //                }
-//
-//            }) { (characters) in
-//                self.characters = characters
+//            } receiveValue: { characters in
+//                self.currentPage += 1
+//                self.characters += characters.results
+//                if self.characters.count < self.perPage {
+//                    self.listFull = true
+//                }
 //            }
 //        cancellables.insert(cancellable)
 //    }
     
-    //    func fetchCharacters() {
-    //        cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
-    //            .tryMap{ $0.data }
-    //            .decode(type: [CharactersResults].self, decoder: JSONDecoder())
-    //            .receive(on: RunLoop.main)
-    //            .catch{ _ in Just(self.characters)}
-    //            .sink { characters in
-    //                self.page += 1
-    //                self.characters.append(contentsOf: characters)
-    //                if self.characters.count < self.perPage {
-    //                    self.membersListFull = true
-    //                }
-    //            }
-    //    }
-    
-    //    func fetchCharacters() {
-    //        CharactersService.loadCharacters(page: "\(page+1)") { (
-    //            result: Result<CharactersModel, APIServiceError>) in
-    //            switch result {
-    //            case .success(let characters):
-    //                self.page += 1
-    //                self.characters?.results += characters.results
-    //                self.delegate?.charactersList()
-    //                if characters.results.count < self.perPage {
-    //                    self.membersListFull = true
-    //                }
-    //
-    //            case .failure:
-    //                self.delegate?.errorList()
-    //            }
-    //        }
-    //    }
+    func getCharactersList() async {
+        guard let url = URL(string: Constants.baseURL + "character") else {
+            return
+        }
+        Task.init {
+            let result = try await CharactersService.newLoadCharacters(from: url)
+            switch result {
+            case .success(let characters):
+                DispatchQueue.main.async {
+                    if self.characters.count < self.perPage {
+                        self.listFull = true
+                    }
+                    self.characters = characters.results
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
