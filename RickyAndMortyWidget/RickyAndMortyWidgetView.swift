@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct RickyAndMortyWidgetView: View {
     @ObservedObject private var charactersViewModel = CharactersViewModel()
     var body: some View {
         HStack {
-            List {
+//            List {
                 ForEach(charactersViewModel.characters) { characters in
                     NavigationLink(
                         destination: DetailView(
@@ -27,7 +28,7 @@ struct RickyAndMortyWidgetView: View {
                         )
                     }
                 }
-            }
+//            }
             .onAppear {
                 Task{
                     await charactersViewModel.getCharactersList()
@@ -39,6 +40,7 @@ struct RickyAndMortyWidgetView: View {
     struct RickyAndMortyWidgetView_Previews: PreviewProvider {
         static var previews: some View {
             RickyAndMortyWidgetView()
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }
 }

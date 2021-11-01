@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B8BE39D9-CB9E-4439-8A5F-6EB7A60344BB"
+            uuid = "C9B19781-2AE2-4AEE-956A-CA3386B46CEF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RickyAndMortySwiftUI/Views/Home/Service/CharactersService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "newLoadCharacters(from:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "loadCharacters(page:complitionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -99,6 +99,7 @@
 		7D64EAAD26891CE400FCBD00 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7D9E2B84268A33730013EEBE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7DB0B83A268B71960042815A /* ListHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeView.swift; sourceTree = "<group>"; };
+		7DED83DB272DDB6600548675 /* RickyAndMortyEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyAndMortyEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +176,7 @@
 		7D41E149271492A50031A029 /* RickyAndMortyWidget */ = {
 			isa = PBXGroup;
 			children = (
+				7DED83DB272DDB6600548675 /* RickyAndMortyEntry.swift */,
 				7D41E14A271492A50031A029 /* RickyAndMortyWidget.swift */,
 				7D41E159271494220031A029 /* RickyAndMortyWidgetView.swift */,
 				7D41E14C271492A50031A029 /* RickyAndMortyWidget.intentdefinition */,
