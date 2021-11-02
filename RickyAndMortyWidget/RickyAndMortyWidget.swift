@@ -15,9 +15,7 @@ struct RickyAndMortyWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            HStack{
-                SmallWidgetView(url: URL(string: entry.characters.results.first?.image ?? "")!)
-            }
+            SmallWidgetView(url: URL(string: entry.characters.results.randomElement()?.image ?? ""))
         case .systemMedium:
             HStack {
                 Text(entry.characters.results.first?.name ?? "")

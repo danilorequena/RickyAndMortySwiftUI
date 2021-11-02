@@ -7,29 +7,25 @@
 
 import WidgetKit
 import SwiftUI
-import Kingfisher
 
 struct SmallWidgetView: View {
-   @State var url: URL
+   var url: URL?
     var body: some View {
-        AsyncImage(url: url) { phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-            case .success(let image):
-                image
+//        Group {
+            if let url = url, let imageData = try? Data(contentsOf: url), let uiImage = UIImage(data: imageData) {
+                Image(uiImage: uiImage)
                     .resizable()
-            case .failure:
-                Image(systemName: "wifi.slash")
+                    .aspectRatio(contentMode: .fill)
+            } else {
+                Image("placeholder-image")
             }
-        }
-            
+//        }
     }
 }
 
 struct SmallWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallWidgetView(url: URL(string: "")!)
+        SmallWidgetView(url: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

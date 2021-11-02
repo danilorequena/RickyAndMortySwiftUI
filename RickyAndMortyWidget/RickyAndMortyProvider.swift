@@ -34,10 +34,10 @@ struct RickyAndMortyProvider: TimelineProvider {
         fetchCharacters { (result) in
             switch result {
             case .success(let entry):
-                let timeline  = Timeline(entries: [entry], policy: .after(Date()))
+                let timeline  = Timeline(entries: [entry], policy: .after(Date().addingTimeInterval(60 * 10)))
                 completion(timeline)
             case .failure:
-                let timeline = Timeline(entries: [RickyAndMortyEntry.placeholder], policy: .after(Date()))
+                let timeline = Timeline(entries: [RickyAndMortyEntry.placeholder], policy: .after(Date().addingTimeInterval(60 * 2)))
                 completion(timeline)
             }
         }
