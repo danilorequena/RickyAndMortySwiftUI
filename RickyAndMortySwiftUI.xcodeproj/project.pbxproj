@@ -14,6 +14,9 @@
 		7D11507D2684C10A0012C3BF /* CharactersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11507C2684C10A0012C3BF /* CharactersModel.swift */; };
 		7D11507F2684C2810012C3BF /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11507E2684C2810012C3BF /* CharactersService.swift */; };
 		7D1150812684C3D30012C3BF /* ApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1150802684C3D30012C3BF /* ApiServiceError.swift */; };
+		7D3172C6273079690001A966 /* RickyAndMortyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3172C5273078E60001A966 /* RickyAndMortyProvider.swift */; };
+		7D3172C727307A040001A966 /* RickyAndMortyEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DED83DB272DDB6600548675 /* RickyAndMortyEntry.swift */; };
+		7D3172CE27307BF40001A966 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3172CC27307B230001A966 /* SmallWidgetView.swift */; };
 		7D41E146271492A50031A029 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D41E145271492A50031A029 /* WidgetKit.framework */; };
 		7D41E148271492A50031A029 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D41E147271492A50031A029 /* SwiftUI.framework */; };
 		7D41E14B271492A50031A029 /* RickyAndMortyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E14A271492A50031A029 /* RickyAndMortyWidget.swift */; };
@@ -21,8 +24,6 @@
 		7D41E150271492A70031A029 /* RickyAndMortyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E14C271492A50031A029 /* RickyAndMortyWidget.intentdefinition */; };
 		7D41E151271492A70031A029 /* RickyAndMortyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E14C271492A50031A029 /* RickyAndMortyWidget.intentdefinition */; };
 		7D41E154271492A70031A029 /* RickyAndMortyWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D41E143271492A50031A029 /* RickyAndMortyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7D41E15A271494220031A029 /* RickyAndMortyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E159271494220031A029 /* RickyAndMortyWidgetView.swift */; };
-		7D41E15B271497040031A029 /* RickyAndMortyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E159271494220031A029 /* RickyAndMortyWidgetView.swift */; };
 		7D41E15C2714A57E0031A029 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64EAA0268909FD00FCBD00 /* CharactersViewModel.swift */; };
 		7D41E15D2714A59B0031A029 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E2B84268A33730013EEBE /* DetailView.swift */; };
 		7D41E15E2714A5A80031A029 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D64EAAD26891CE400FCBD00 /* HomeCell.swift */; };
@@ -79,6 +80,8 @@
 		7D11507C2684C10A0012C3BF /* CharactersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModel.swift; sourceTree = "<group>"; };
 		7D11507E2684C2810012C3BF /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
 		7D1150802684C3D30012C3BF /* ApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceError.swift; sourceTree = "<group>"; };
+		7D3172C5273078E60001A966 /* RickyAndMortyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyAndMortyProvider.swift; sourceTree = "<group>"; };
+		7D3172CC27307B230001A966 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		7D41E143271492A50031A029 /* RickyAndMortyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RickyAndMortyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D41E145271492A50031A029 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7D41E147271492A50031A029 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -86,7 +89,6 @@
 		7D41E14C271492A50031A029 /* RickyAndMortyWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = RickyAndMortyWidget.intentdefinition; sourceTree = "<group>"; };
 		7D41E14D271492A70031A029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D41E14F271492A70031A029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D41E159271494220031A029 /* RickyAndMortyWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyAndMortyWidgetView.swift; sourceTree = "<group>"; };
 		7D48951B268E306800DE5027 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		7D4F7987268BB25400810877 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		7D4F7989268BB2B900810877 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -164,6 +166,38 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7D3172C827307ADC0001A966 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D3172CB27307B020001A966 /* LargeComponent */,
+				7D3172CA27307AF20001A966 /* MediumComponent */,
+				7D3172C927307AE10001A966 /* SmallComponent */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D3172C927307AE10001A966 /* SmallComponent */ = {
+			isa = PBXGroup;
+			children = (
+				7D3172CC27307B230001A966 /* SmallWidgetView.swift */,
+			);
+			path = SmallComponent;
+			sourceTree = "<group>";
+		};
+		7D3172CA27307AF20001A966 /* MediumComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MediumComponent;
+			sourceTree = "<group>";
+		};
+		7D3172CB27307B020001A966 /* LargeComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LargeComponent;
+			sourceTree = "<group>";
+		};
 		7D41E144271492A50031A029 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,9 +210,10 @@
 		7D41E149271492A50031A029 /* RickyAndMortyWidget */ = {
 			isa = PBXGroup;
 			children = (
+				7D3172C827307ADC0001A966 /* Views */,
+				7D3172C5273078E60001A966 /* RickyAndMortyProvider.swift */,
 				7DED83DB272DDB6600548675 /* RickyAndMortyEntry.swift */,
 				7D41E14A271492A50031A029 /* RickyAndMortyWidget.swift */,
-				7D41E159271494220031A029 /* RickyAndMortyWidgetView.swift */,
 				7D41E14C271492A50031A029 /* RickyAndMortyWidget.intentdefinition */,
 				7D41E14D271492A70031A029 /* Assets.xcassets */,
 				7D41E14F271492A70031A029 /* Info.plist */,
@@ -425,7 +460,6 @@
 				7D64EAAE26891CE400FCBD00 /* HomeCell.swift in Sources */,
 				7D11507D2684C10A0012C3BF /* CharactersModel.swift in Sources */,
 				7D1150712684C0140012C3BF /* ContentView.swift in Sources */,
-				7D41E15A271494220031A029 /* RickyAndMortyWidgetView.swift in Sources */,
 				7D64EAAB26891B2E00FCBD00 /* Constants.swift in Sources */,
 				7D11506F2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift in Sources */,
 				7D11507F2684C2810012C3BF /* CharactersService.swift in Sources */,
@@ -441,14 +475,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D41E15F2714A5D70031A029 /* CharactersService.swift in Sources */,
+				7D3172C6273079690001A966 /* RickyAndMortyProvider.swift in Sources */,
 				7D41E1602714A5E80031A029 /* CharactersModel.swift in Sources */,
 				7D41E15C2714A57E0031A029 /* CharactersViewModel.swift in Sources */,
+				7D3172CE27307BF40001A966 /* SmallWidgetView.swift in Sources */,
 				7D41E14B271492A50031A029 /* RickyAndMortyWidget.swift in Sources */,
 				7D41E150271492A70031A029 /* RickyAndMortyWidget.intentdefinition in Sources */,
 				7D41E1622714A61A0031A029 /* ApiServiceError.swift in Sources */,
 				7D41E15D2714A59B0031A029 /* DetailView.swift in Sources */,
+				7D3172C727307A040001A966 /* RickyAndMortyEntry.swift in Sources */,
 				7D41E15E2714A5A80031A029 /* HomeCell.swift in Sources */,
-				7D41E15B271497040031A029 /* RickyAndMortyWidgetView.swift in Sources */,
 				7D41E1612714A5F40031A029 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

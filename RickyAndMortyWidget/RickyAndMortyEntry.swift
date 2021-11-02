@@ -10,7 +10,7 @@ import WidgetKit
 
 struct RickyAndMortyEntry: TimelineEntry, Codable {
     var date: Date
-    let characters: CharactersModel
+    var characters: CharactersModel
     var isPlaceholder = false
 }
 
@@ -18,14 +18,48 @@ extension RickyAndMortyEntry {
     static var stub: RickyAndMortyEntry {
         RickyAndMortyEntry(
             date: Date(),
-            characters: .init(results: nil)
+            characters: .init(results: [
+                CharactersResults(
+                    id: 0,
+                    name: "Lois Lane",
+                    status: "",
+                    species: "",
+                    gender: "",
+                    origin: Origin(
+                        name: "",
+                        url: ""
+                    ),
+                    location: Location(
+                        name: "",
+                        url: ""
+                    ),
+                    image: ""
+                )
+            ])
         )
     }
     
     static var placeholder: RickyAndMortyEntry {
         RickyAndMortyEntry(
             date: Date(),
-            characters: .init(results: nil),
+            characters: .init(results: [
+                CharactersResults(
+                    id: 0,
+                    name: "Morty",
+                    status: "",
+                    species: "",
+                    gender: "",
+                    origin: Origin(
+                        name: "",
+                        url: ""
+                    ),
+                    location: Location(
+                        name: "",
+                        url: ""
+                    ),
+                    image: ""
+                )
+            ]),
             isPlaceholder: true
         )
     }
