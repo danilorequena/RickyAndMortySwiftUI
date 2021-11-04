@@ -15,11 +15,14 @@ struct RickyAndMortyWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallWidgetView(url: URL(string: entry.characters.results.randomElement()?.image ?? ""))
+            SmallWidgetView(url: URL(string: entry.characters.results.shuffled().first?.image ?? ""))
         case .systemMedium:
-            HStack {
-                Text(entry.characters.results.first?.name ?? "")
-            }
+            let array = entry.characters.results.shuffled().map{$0}
+            RickyAndMortyMediumView(
+                url: URL(string: array.first?.image ?? ""),
+                name: array.first?.name ?? "",
+                origin: array.first?.origin.name ?? ""
+            )
         default:
             HStack {
                 Text(entry.characters.results.first?.name ?? "")

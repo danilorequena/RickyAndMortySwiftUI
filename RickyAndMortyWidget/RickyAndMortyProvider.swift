@@ -31,10 +31,12 @@ struct RickyAndMortyProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<RickyAndMortyEntry>) -> Void) {
+        let date = Date()
         fetchCharacters { (result) in
             switch result {
             case .success(let entry):
-                let timeline  = Timeline(entries: [entry], policy: .after(Date().addingTimeInterval(60 * 10)))
+                let nextUpdate = Calendar.current.date(byAdding: .minute, value: 2, to: date)!
+                let timeline  = Timeline(entries: [entry], policy: .after(nextUpdate))
                 completion(timeline)
             case .failure:
                 let timeline = Timeline(entries: [RickyAndMortyEntry.placeholder], policy: .after(Date().addingTimeInterval(60 * 2)))
