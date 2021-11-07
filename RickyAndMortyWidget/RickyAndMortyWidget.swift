@@ -23,10 +23,12 @@ struct RickyAndMortyWidgetEntryView : View {
                 name: array.first?.name ?? "",
                 origin: array.first?.origin.name ?? ""
             )
-        default:
-            HStack {
-                Text(entry.characters.results.first?.name ?? "")
-            }
+        case .systemLarge:
+            let characters = entry.characters
+            RickyAndMortyLargeView(infos: characters)
+        case .systemExtraLarge:
+            let characters = entry.characters
+            RickyAndMortyLargeView(infos: characters)
         }
     }
 }
@@ -51,7 +53,7 @@ struct RickyAndMortyWidget_Previews: PreviewProvider {
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
             RickyAndMortyWidgetEntryView(entry: RickyAndMortyEntry.stub)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            RickyAndMortyWidgetEntryView(entry: RickyAndMortyEntry.stub)
+            RickyAndMortyWidgetEntryView(entry: RickyAndMortyEntry.largeStub)
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
         }
     }

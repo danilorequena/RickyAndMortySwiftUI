@@ -39,6 +39,80 @@ extension RickyAndMortyEntry {
         )
     }
     
+    static var largeStub: RickyAndMortyEntry {
+        RickyAndMortyEntry(
+            date: Date(),
+            characters: CharactersModel(
+                results: [
+                    CharactersResults(
+                        id: 0,
+                        name: "Ricky",
+                        status: "",
+                        species: "",
+                        gender: "Male",
+                        origin: Origin(
+                            name: "Earth",
+                            url: ""
+                        ),
+                        location: Location(
+                            name: "",
+                            url: ""
+                        ),
+                        image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                    ),
+                    CharactersResults(
+                        id: 1,
+                        name: "Morty",
+                        status: "",
+                        species: "",
+                        gender: "Male",
+                        origin: Origin(
+                            name: "Earth",
+                            url: ""
+                        ),
+                        location: Location(
+                            name: "",
+                            url: ""
+                        ),
+                        image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+                    ),
+                    CharactersResults(
+                        id: 3,
+                        name: "Summer",
+                        status: "",
+                        species: "",
+                        gender: "Female",
+                        origin: Origin(
+                            name: "Earth",
+                            url: ""
+                        ),
+                        location: Location(
+                            name: "",
+                            url: ""
+                        ),
+                        image: "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+                    ),
+                    CharactersResults(
+                        id: 4,
+                        name: "Richard",
+                        status: "",
+                        species: "",
+                        gender: "Male",
+                        origin: Origin(
+                            name: "Earth",
+                            url: ""
+                        ),
+                        location: Location(
+                            name: "",
+                            url: ""
+                        ),
+                        image: "https://rickandmortyapi.com/api/character/avatar/4.jpeg"
+                    )
+                ]
+            )
+        )
+    }
+    
     static var placeholder: RickyAndMortyEntry {
         RickyAndMortyEntry(
             date: Date(),

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0AF8C22736F9A800E96AD8 /* RickyAndMortyLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0AF8C0273604BB00E96AD8 /* RickyAndMortyLargeView.swift */; };
 		7D11506F2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11506E2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift */; };
 		7D1150712684C0140012C3BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1150702684C0140012C3BF /* ContentView.swift */; };
 		7D1150732684C0150012C3BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1150722684C0150012C3BF /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D0AF8C0273604BB00E96AD8 /* RickyAndMortyLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyAndMortyLargeView.swift; sourceTree = "<group>"; };
 		7D11506B2684C0140012C3BF /* RickyAndMortySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickyAndMortySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D11506E2684C0140012C3BF /* RickyAndMortySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickyAndMortySwiftUIApp.swift; sourceTree = "<group>"; };
 		7D1150702684C0140012C3BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		7D3172CB27307B020001A966 /* LargeComponent */ = {
 			isa = PBXGroup;
 			children = (
+				7D0AF8C0273604BB00E96AD8 /* RickyAndMortyLargeView.swift */,
 			);
 			path = LargeComponent;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				7D41E1602714A5E80031A029 /* CharactersModel.swift in Sources */,
 				7D41E15C2714A57E0031A029 /* CharactersViewModel.swift in Sources */,
 				7D56E9612733111400004B3F /* RickyAndMortyMediumView.swift in Sources */,
+				7D0AF8C22736F9A800E96AD8 /* RickyAndMortyLargeView.swift in Sources */,
 				7D3172CE27307BF40001A966 /* SmallWidgetView.swift in Sources */,
 				7D41E14B271492A50031A029 /* RickyAndMortyWidget.swift in Sources */,
 				7D41E150271492A70031A029 /* RickyAndMortyWidget.intentdefinition in Sources */,
